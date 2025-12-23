@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdullah | AI Engineer & Doctoral Researcher</title>
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#101a2f;
+      --panel2:#0f1a33;
+      --text:#e7ecff;
+      --muted:#a9b4d0;
+      --brand:#4cc9f0;
+      --brand2:#7c3aed;
+      --border:rgba(255,255,255,0.08);
+      --shadow:0 12px 35px rgba(0,0,0,0.35);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1000px 600px at 80% -30%, rgba(124,58,237,0.25), transparent 60%),
+                  radial-gradient(900px 500px at 20% 0%, rgba(76,201,240,0.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:var(--brand); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:28px 20px 70px;
+    }
+
+    /* HERO */
+    header{
+      margin-top:18px;
+      padding:34px;
+      border-radius:var(--radius);
+      background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border:1px solid var(--border);
+      box-shadow: var(--shadow);
+      display:flex;
+      gap:28px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .avatar{
+      width:130px;
+      height:130px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.18);
+      box-shadow:0 10px 20px rgba(0,0,0,0.4);
+      object-fit:cover;
+      flex:0 0 auto;
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:260px;
+    }
+
+    .hero-text h1{
+      font-size:2.4rem;
+      margin:0;
+      letter-spacing:0.3px;
+    }
+
+    .hero-text p{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    .hero-badges{
+      margin-top:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .badge{
+      padding:6px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,0.06);
+      border:1px solid var(--border);
+      font-size:0.9rem;
+      color:var(--text);
+    }
+
+    .cta-row{
+      margin-top:18px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:10px 16px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color:var(--text);
+      font-weight:600;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .btn:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.1);
+      text-decoration:none;
+    }
+
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(76,201,240,0.25), rgba(124,58,237,0.25));
+      border:1px solid rgba(255,255,255,0.14);
+    }
+
+    section{
+      margin-top:28px;
+      padding:26px;
+      border-radius:var(--radius);
+      background: rgba(255,255,255,0.03);
+      border:1px solid var(--border);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+      animation: fadeUp 0.7s ease both;
+    }
+
+    section h2{
+      margin:0 0 14px;
+      font-size:1.35rem;
+      letter-spacing:0.2px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap:16px;
+    }
+
+    .card{
+      padding:16px;
+      border-radius:16px;
+      background: rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .muted{color:var(--muted);}
+
+    .job{
+      padding:16px;
+      border-radius:16px;
+      background: rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      margin-bottom:16px;
+    }
+
+    .job-title{
+      font-weight:800;
+      font-size:1.05rem;
+      margin:0;
+    }
+
+    .job-meta{
+      margin:6px 0 10px;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    ul{
+      margin:0;
+      padding-left:18px;
+    }
+    ul li{margin-bottom:6px;}
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .tag{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.06);
+      font-size:0.92rem;
+    }
+
+    footer{
+      margin-top:34px;
+      text-align:center;
+      color:rgba(231,236,255,0.55);
+      font-size:0.9rem;
+    }
+
+    @keyframes fadeUp {
+      from {opacity:0; transform: translateY(10px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+
+    @media (max-width:640px){
+      header{padding:24px;}
+      .hero-text h1{font-size:2rem;}
+      .avatar{width:105px;height:105px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HERO -->
+    <header>
+      <!-- Option B path for image -->
+      <img class="avatar" src="assets/img/abdullah_ljmu.jpg" alt="Abdullah profile photo">
+
+      <div class="hero-text">
+        <h1>Abdullah</h1>
+        <p>AI Engineer • Embedded Systems Engineer • Researcher</p>
+
+        <div class="hero-badges">
+          <span class="badge">Computer Vision</span>
+          <span class="badge">Reinforcement Learning</span>
+          <span class="badge">Digital Twin Simulation</span>
+          <span class="badge">IoT + Embedded Systems</span>
+          <span class="badge">Unreal Engine + CARLA</span>
+          <span class="badge">SOTIF</span>
+        </div>
+
+        <div class="cta-row">
+          <!-- Option B path for CV -->
+          <a class="btn primary" href="assets/docs/CV.pdf" download>⬇ Download CV</a>
+          <a class="btn" href="mailto:abdullahfaisal67@yahoo.com">✉ Email</a>
+          <a class="btn" href="#" target="_blank">GitHub</a>
+          <a class="btn" href="#" target="_blank">LinkedIn</a>
+          <a class="btn" href="#" target="_blank">Google Scholar</a>
+        </div>
+
+        <p class="muted" style="margin-top:14px;">
+          UK • +44 7507655095 • abdullahfaisal67@yahoo.com
+        </p>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section>
+      <h2>About</h2>
+      <p class="muted">
+        I am an AI Engineer and Researcher with expertise in computer vision, reinforcement learning,
+        embedded systems, and simulation technology. My work spans digital twins, autonomous driving simulation,
+        IoT sensor platforms, and applied machine learning in safety-critical systems.
+      </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="card">
+          <b>PhD — Transport Logistics</b>
+          <p class="muted">Liverpool John Moores University • July 2025 – Present</p>
+          <p class="muted">Thesis: Optimisation and AI for a modal shift to freight rail.</p>
+        </div>
+
+        <div class="card">
+          <b>MSc — Electrical Engineering</b>
+          <p class="muted">NUST Islamabad • Sept 2021 – Feb 2024</p>
+          <p class="muted"><b>CGPA:</b> 3.20 / 4.0</p>
+          <p class="muted">Thesis: Smart HVAC Control with RL and Time Series Forecasting.</p>
+        </div>
+
+        <div class="card">
+          <b>BSc — Electronics Engineering</b>
+          <p class="muted">UET Taxila • Oct 2017 – Aug 2021</p>
+          <p class="muted"><b>CGPA:</b> 3.29 / 4.0</p>
+          <p class="muted">Final Project: FPGA-based Unmanned Ground Vehicle.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+      <h2>Experience</h2>
+
+      <div class="job">
+        <p class="job-title">AI Engineer — Intelligent Learning Machines, Inc.</p>
+        <p class="job-meta">June 2023 – July 2025</p>
+        <ul>
+          <li>Designed and deployed verification/validation digital twin simulation system (SIMULATER).</li>
+          <li>Developed high-fidelity simulation environments using Unreal Engine + CARLA.</li>
+          <li>Created real-world driving scenarios using MathWorks RoadRunner.</li>
+          <li>Modeled digital twins of camera + LiDAR sensors for realistic sensor simulation.</li>
+          <li>Implemented fault injection tools for robustness and failure scenario assessment.</li>
+          <li>Conducted SOTIF analysis for Lane Centering System (LCS) and Lane Keeping Assist (LKA).</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <p class="job-title">Research Assistant — NUST-Coventry IoT Lab</p>
+        <p class="job-meta">Nov 2021 – June 2025</p>
+        <ul>
+          <li>Air Quality Monitoring (Living Lab): PCB design, firmware, OTA updates, LSTM/1DCNN trend forecasting.</li>
+          <li>Agri-DMap: Raspberry Pi + Jetson Nano crop disease monitoring using YOLOv7 + ResNet.</li>
+          <li>Precision Agriculture: Soil + air sensors, master/slave IoT nodes, web connectivity.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <p class="job-title">Embedded Systems Engineer — Thermalog</p>
+        <p class="job-meta">Sept 2022 – May 2023</p>
+        <ul>
+          <li>Developed high-accuracy temperature sensor platforms (TESEN, WISEN).</li>
+          <li>Built WISEN probe from scratch and extended LiPo battery life to a week.</li>
+          <li>Implemented OTA updates + calibration procedures.</li>
+          <li>Led TASMOTA Bridge integration for IoT communication across platforms.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+      <h2>Key Projects</h2>
+      <ul>
+        <li>Vehicle behavior extraction and simulation from traffic video</li>
+        <li>Depth estimation using MonoDepth + ZoeDepth</li>
+        <li>Speed + steering estimation using optical flow</li>
+        <li>3D Pose estimation with computer vision</li>
+        <li>Real-time industrial critical event detection</li>
+        <li>Air quality prediction with Deep Learning (LSTM/1DCNN)</li>
+        <li>Audio classification for vessel identification using Transformers</li>
+      </ul>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section>
+      <h2>Publications</h2>
+      <ul>
+        <li>Soft computing approach for classification of complex power quality events — IEEE ICAI 2021</li>
+        <li>Signal analysis approach for detection and classification of power quality disturbances — SMARTTECH 2020</li>
+        <li>Pattern analysis for classification of power quality disturbances — ICETST 2020</li>
+        <li>Designing Beef Cattle Recognition and Detection System — IFIP PLM 2024</li>
+      </ul>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+      <h2>Skills</h2>
+      <div class="tags">
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Reinforcement Learning</span>
+        <span class="tag">Unreal Engine + CARLA</span>
+        <span class="tag">Digital Twins</span>
+        <span class="tag">SOTIF</span>
+        <span class="tag">IoT Systems</span>
+        <span class="tag">Embedded Systems</span>
+        <span class="tag">Python</span>
+        <span class="tag">ROS</span>
+        <span class="tag">PCB Design</span>
+      </div>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section>
+      <h2>Languages</h2>
+      <ul>
+        <li>Urdu — Native</li>
+        <li>English — IELTS 7.5</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section>
+      <h2>Contact</h2>
+      <p class="muted">
+        Want to collaborate on simulation, CV/ML research, or embedded AI systems?  
+        Email me at <a href="mailto:abdullahfaisal67@yahoo.com">abdullahfaisal67@yahoo.com</a>.
+      </p>
+    </section>
+
+    <footer>
+      © 2025 Abdullah • Built with GitHub Pages
+    </footer>
+
+  </div>
+</body>
+</html>
